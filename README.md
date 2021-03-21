@@ -53,6 +53,32 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Docker
+
+To build a docker image for this app, run:
+
+```
+docker build -t <username>/<imagename> -f docker/Dockerfile .
+```
+
+To run the application on port 3000, run:
+
+```
+docker run -it -d -p 3000:3000 -e PORT=3000 docker.io/<username>/<imagename>
+```
+
+Then you can try out the boilerplate controller by pointing your browser to [http://localhost:3000](http://localhost:3000)
+
+This should return you the 'Hello World' string.
+
+To test the secure endpoint, point your browser to [http://localhost:3000/secure](http://localhost:3000/secure)
+
+You should get the following response:
+
+```
+{"statusCode":401,"message":"Unauthorized"}
+```
+
 ## Test
 
 ```bash
